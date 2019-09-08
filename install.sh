@@ -6,6 +6,7 @@
 # E-mail: daniel .. smi.sh
 # Time：2018-04-27 01:30 UTC
 # Version: 1.00
+# Modified for R3D
 #----------------------------------------------------------------*/
 
 clear
@@ -17,8 +18,8 @@ WEBPATH="/www/xiaoqiang/web"
 VERSIONPATH="/usr/share/xiaoqiang"
 
 MOUNTFILESPATH="/tmp/langmod/tmp"
-
-if [ "$MODEL" == "R3P" -o "$MODEL" == "R3G" ]; then
+#Changed to R3D for testing
+if [ "$MODEL" == "R3D" -o "$MODEL" == "R3G" ]; then
   echo "Supported Model ($MODEL)"
 else
   echo "Unsupported Model"
@@ -54,7 +55,8 @@ if [ ! -f /etc/langmod/base.en.lmo ]; then
   mkdir /etc/langmod/
   touch /etc/langmod/.installed
   echo -n "Downloading English Pack"
-  wget http://nocrypt.smi.sh/languages/R3P/base.en.lmo -O /etc/langmod/base.en.lmo
+  #Replaced the download link
+  wget https://github.com/leonguyen52/MiWifi-Language-Mod/blob/master/languages/R3P/base.en.lmo -O /etc/langmod/base.en.lmo
 fi
 
 if [ ! -f /etc/langmod/base.en.lmo ]; then
